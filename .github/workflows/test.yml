@@ -1,0 +1,20 @@
+name: Test Application
+on:
+    push:
+        branches:
+            - main
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        name: Test and Build
+
+        steps:
+
+        - uses: actions/checkout@v3
+
+        - uses: bahmutov/npm-install@v1
+
+        - run: npm run lint
+
+        - run: npm run test
